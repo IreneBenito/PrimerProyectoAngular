@@ -11,4 +11,5 @@ import { Component } from '@angular/core';
 /* info pasada a la vista del app.component.html */
 export class AppComponent {
   title = 'PrimerProyecto';
+  name = 'Irene Benito Pinel'
 }
