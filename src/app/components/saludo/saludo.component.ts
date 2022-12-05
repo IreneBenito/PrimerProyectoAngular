@@ -24,5 +24,12 @@ export class SaludoComponent implements OnInit {
     //tareas previas a la renderizacion del componente .Ej.: peticion http
     console.log("ngOnInit del componente Saludo");
   }
+  /* 
+  *Ejemplo para gestionar un evento de tipo click en el DOM 
+  */
+ //metodo de clase que queremos que se ejecute desde la vista
+  alertaSaludo(): void{ //devuelve un void
+    alert(`Hola , ${this.nombre}, Alerta despachada desde un click de botón`)
+  }
 
 }
