@@ -12,4 +12,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'PrimerProyecto';
   nombre = 'Irene Benito Pinel'/* variable que le pasamos al componente saludo en app.component.html */
+  usuario = '@IreneBenito'/* variable que le pasamos al componente saludo en app.component.html */
 }

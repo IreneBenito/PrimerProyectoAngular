@@ -13,6 +13,7 @@ export class SaludoComponent implements OnInit {
   //creamos variable nombre para llamar desde el componente con {{}}
   //con Input le decimos que este nombre lo recibimos desde el componente (padre) que renderiza este componente pero le ponemos un nombre por defecto
   @Input() nombre: string = "Nombre por defecto";
+  @Input() nombreUsuario: string = "NombreUsuario por defecto";
 
   //al constructor se le pueden añadir dependencias y providers
   constructor() {
