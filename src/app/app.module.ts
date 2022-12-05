@@ -1,5 +1,6 @@
 /* esto es un modulo de angular */
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 /* para poder renderizar las aplicaciones en el navegador */
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,8 +15,11 @@ import { SaludoComponent } from './components/saludo/saludo.component';/* app.co
     AppComponent,
     SaludoComponent
   ],
+  //todos los imports seran aplicables a los componentes declarados o inferiores
   imports: [
-    BrowserModule
+    BrowserModule,
+    //añadimos modulo para ngModel
+    FormsModule
   ],
   providers: [],
   /* declara el componente que inicia el modulo */
