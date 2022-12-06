@@ -1,8 +1,10 @@
 //interface OnInit es un hook, un punto del ciclo de vida del componente que permite realizar tareas cuando el componente este listo para ser renderizado
+//OnDestroy cuando el componente desaparece es cuando se ejecuta
+//
 //Input como decorador de una variable
 //Output son eventos que ocurren en el hijo y que ejecutan algo en el padre
 //EventEmitter para emitir eventos y que se ejecuten en el padre
-import { Component , OnInit , Input , Output , EventEmitter} from '@angular/core';
+import { Component , OnInit , OnDestroy , OnChanges , Input , Output , EventEmitter, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-saludo', //selector para poder declarar el componente en otro y anidarlos
@@ -10,7 +12,8 @@ import { Component , OnInit , Input , Output , EventEmitter} from '@angular/core
   styleUrls: ['./saludo.component.scss']
 })
 
-export class SaludoComponent implements OnInit {
+//si sale un error : quick fix :implement missing interfaces
+export class SaludoComponent implements OnInit , OnDestroy , OnChanges {
 
   //creamos variable nombre para llamar desde el componente con {{}}
   //con Input le decimos que este nombre lo recibimos desde el componente (padre) que renderiza este componente pero le ponemos un nombre por defecto
@@ -29,6 +32,17 @@ export class SaludoComponent implements OnInit {
     //tareas previas a la renderizacion del componente .Ej.: peticion http
     console.log("ngOnInit del componente Saludo");
   }
+  ngOnChanges(changes: SimpleChanges): void {
+    //tareas al cambiar cosas dentro de un componente.
+    console.log("ngOnChanges el componente recibe cambios", changes); //changes te indica los cambios realizados
+    console.log("valor anterior", changes['nombreUsuario'].previousValue);
+    console.log("valor actual", changes['nombreUsuario'].currentValue);
+  }
+  ngOnDestroy(): void {
+    //tareas tras cerrar un componente.
+    console.log("ngOnDestroy el componente desaparece");
+  }
+
   /* 
   *Ejemplo para gestionar un evento de tipo click en el DOM 
   */
@@ -45,3 +59,18 @@ export class SaludoComponent implements OnInit {
   }
 
 }
+
+
+/* 
+ Orden de ciclo de vida de los componentes:
+ - 1. ngOnChanges --> modificacion del componente
+ - 2. ngOnInit  --> carga de datos
+  3. ngDoCheck
+  4. ngAfterContentInit
+  5. ngAfterContentChecked
+  6. ngAfterViewInit
+  7.ngAfterViewChecked
+  8. ngAfterContentChecked  //se vuelve a lanzar
+  9.ngAfterViewChecked  //se vuelve a lanzar
+  - 10. ngOnDestroy --> destruccion del componente
+*/
