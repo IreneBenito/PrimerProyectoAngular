@@ -2,5 +2,11 @@
 <span>Welcome {{ nombre }} </span>
 <span>with user {{ nombreUsuario }} !</span>
 
+<!-- innerText es el valor que se establece entre las etiquetas --> 
+<!-- seria igual que poner {{nombreUsuario}} dentro de la etiqueta -->
+<h3 id="usuario" [innerText]="nombreUsuario">
+    <!-- no indicamos nada en las etiquetas , si no que el valor viene definido por la propiedad -->
+</h3>
+
 <!-- boton con logica de evento click-->
 <button id="buttonAlert" (click)="alertaSaludo()">Show Alert</button>
