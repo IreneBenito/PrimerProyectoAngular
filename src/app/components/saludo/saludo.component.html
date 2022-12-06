@@ -1,6 +1,7 @@
 <!-- <p>saludo works!</p> -->
-<span>Welcome {{ nombre }} </span>
-<span>with user {{ nombreUsuario }} !</span>
+<!-- ngClass es una propiedad que permite dar valor literal o poner valores del controlador -->
+<span ngClass="saludo">Welcome {{ nombre }} </span>
+<span [ngClass]="nombreUsuario == '@Irene' ? 'userYes':'userNo'"> with user {{ nombreUsuario }} !</span>
 
 <!-- innerText es el valor que se establece entre las etiquetas --> 
 <!-- seria igual que poner {{nombreUsuario}} dentro de la etiqueta -->
