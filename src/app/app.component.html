@@ -323,7 +323,7 @@
   <!-- si hacemos ctrl + espacio dentro de la etiqueta muestra propiedades -->
   <!-- le pasamos al componente saludo el nombre  -->
   <!-- con los corchetes indicamos que el valor de las comillas es una variable de dentro del controlador -->
-  <app-saludo [nombre]="nombre" [nombreUsuario]="usuario"></app-saludo> <!--  nombre="Irene" para pasarle un string fijo -->
+  <app-saludo [nombre]="nombre" [nombreUsuario]="usuario" (mensajeEmmiter)="recibirMensajeDelHijo($event)"></app-saludo> <!--  nombre="Irene" para pasarle un string fijo -->
 
 </div>
 
