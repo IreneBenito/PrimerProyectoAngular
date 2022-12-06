@@ -23,6 +23,13 @@ export class SaludoComponent implements OnInit , OnDestroy , OnChanges {
   //emitir al componente padre un string
   @Output() mensajeEmmiter : EventEmitter<string> = new EventEmitter<string>();
 
+  //variable estilo de tipo objeto
+  myStyle: object = {
+    color: 'grey',
+    fontSize: '20px',
+    fontWeight: 'bold'
+  }
+
   //al constructor se le pueden añadir dependencias y providers
   constructor() {
   }

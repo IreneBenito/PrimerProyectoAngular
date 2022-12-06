@@ -3,6 +3,11 @@
 <span ngClass="saludo">Welcome {{ nombre }} </span>
 <span [ngClass]="nombreUsuario == '@Irene' ? 'userYes':'userNo'"> with user {{ nombreUsuario }} !</span>
 
+<!-- estilo inyectado directamente -->
+<p [ngStyle]="{color:'orange'}"> Style example</p>
+<!-- usando un estilo objeto -->
+<p [ngStyle]="myStyle"> Style example object</p>
+
 <!-- innerText es el valor que se establece entre las etiquetas --> 
 <!-- seria igual que poner {{nombreUsuario}} dentro de la etiqueta -->
 <h3 id="usuario" [innerText]="nombreUsuario">
